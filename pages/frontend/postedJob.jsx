@@ -16,13 +16,14 @@ export default function PostedJobs() {
     const router = useRouter();
     const dispatch = useDispatch();
     const user = useSelector(state => state?.User?.userData)
-    const myJobs = useSelector(state => state?.Job?.myJobs);
+    const myJobs = useSelector(state => state?.Job?.myJobs)||[]
     const id = user?.id
 
 
 
     useEffect(() => {
         if (!id || !Cookies.get('token')) {
+            toast.error("Please Login First")
             router.push('/auth/login')
         }
     }, [user, id, Cookies])
@@ -54,7 +55,7 @@ export default function PostedJobs() {
                             </div>
                             <div className='w-full h-full px-4 py-4 flex  overflow-y-auto  items-start justify-center flex-wrap'>
                                 {
-                                    myJobs?.map((job, index) => (
+                                  myJobs.length>0 && myJobs?.map((job, index) => (
                                         <JobsCard key={index} job={job}  posted={true}/>
                                     ))
                                 }

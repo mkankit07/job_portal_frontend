@@ -116,7 +116,7 @@ export default function JobDetails() {
                                         <div className='flex items-center justify-center mb-1'>
                                             <GoLocation className='text-xs font-semibold text-indigo-600' />
                                             <p className='font-semibold text-base mx-1'>Location </p>
-                                            <p className=' text-sm text-gray-800 mx-1'>Rawalipindi</p>
+                                            <p className=' text-sm text-gray-800 mx-1'>Ahmedabad</p>
                                         </div>
                                         <div className='flex items-center justify-center mb-1'>
                                             <MdCategory className='text-xs font-semibold text-indigo-600' />

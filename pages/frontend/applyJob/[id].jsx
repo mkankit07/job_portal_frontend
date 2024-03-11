@@ -72,7 +72,7 @@ export default function ApplyJob() {
             toast.success('Your Application is Submitted , Redirecting ... ')
             setTimeout(() => {
                 router.push('/')
-            }, 500);
+            }, 100);
 
         } else {
             toast.error('Something Went Wrong')

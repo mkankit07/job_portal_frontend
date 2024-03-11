@@ -64,9 +64,7 @@ export default function PostAJob() {
         const res = await post_job(formData);
         if (res.code==200 || res.code==201) {
             toast.success(res.message);
-            setTimeout(() => {
-                router.push('/frontend/displayJobs')
-            }, 500)
+            router.push('/frontend/displayJobs')
         }
         else {
             toast.error(res.message);

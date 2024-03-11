@@ -20,10 +20,6 @@ export default function AppliedJobDataTable() {
     useEffect(() => {
         setFilteredData(Data);
     }, [Data])
-
-    
-console.log(appliedJobData,"////////////////////////////////////")
-
     const columns = [
         {
             name: 'Apply Date',

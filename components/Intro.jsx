@@ -16,12 +16,14 @@ export default function Intro() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    const filteredJobs = jobData?.filter((job) => {
-      let x = job?.job_category;
-      return x?.toUpperCase() === search?.toUpperCase().trim();
-    });
-    setFilteredJobs(filteredJobs);
-    setDoneSearch(true)
+    if(jobData.length>0){
+      const filteredJobs = jobData?.filter((job) => {
+        let x = job?.job_category;
+        return x?.toUpperCase() === search?.toUpperCase().trim();
+      });
+      setFilteredJobs(filteredJobs);
+      setDoneSearch(true)
+    }
   }
 
   return (

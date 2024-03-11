@@ -39,9 +39,7 @@ export default function ForgetPassword() {
     const res = await forget_password(formData);
     if (res.success) {
       toast.success(res.message);
-      setTimeout(() => {
-        Router.push('/auth/login')
-      }, 500);
+      Router.push('/auth/login')
     }
     else {
       toast.error(res.message);
