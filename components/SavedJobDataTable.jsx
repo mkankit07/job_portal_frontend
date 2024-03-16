@@ -10,7 +10,7 @@ import { toast , ToastContainer } from 'react-toastify';
 export default function SavedJobDataTable() {
     const router = useRouter();
     const bookMarkJobData = useSelector(state => state.AppliedJob.bookMark)
-
+    console.log(bookMarkJobData)
     const [Data, setData] = useState([]);
 
     
@@ -32,19 +32,19 @@ export default function SavedJobDataTable() {
     const columns = [
         {
             name: 'Apply Date',
-            selector: row => new Date(`${row?.job?.createdAt}`).toLocaleDateString('en-GB'),
+            selector: row => new Date(`${row?.job_id?.createdAt}`).toLocaleDateString('en-GB'),
         },
         {
             name: 'Company',
-            selector: row => row?.job?.company,
+            selector: row => row?.job_id?.company,
         },
         {
             name: 'Job title',
-            selector: row => row?.job?.title,
+            selector: row => row?.job_id?.title,
         },
         {
             name: 'Job Salary ',
-            selector: row => '$' + row?.job?.salary,
+            selector: row => '$' + row?.job_id?.salary,
         },
         {
             name: 'Action',
@@ -52,7 +52,7 @@ export default function SavedJobDataTable() {
         },
         {
             name: '',
-            cell: row => <button onClick={() => router.push(`/frontend/jobDetails/${row?.job?._id}`)} className='md:px-2 md:py-2 px-1 py-1 text-xs text-indigo-600 hover:text-white my-2 hover:bg-indigo-600 border border-indigo-600   rounded transition-all duration-700  '>view Detail</button>,
+            cell: row => <button onClick={() => router.push(`/frontend/jobDetails/${row?.job_id?._id}`)} className='md:px-2 md:py-2 px-1 py-1 text-xs text-indigo-600 hover:text-white my-2 hover:bg-indigo-600 border border-indigo-600   rounded transition-all duration-700  '>view Detail</button>,
         },
     ];
 
@@ -76,7 +76,7 @@ export default function SavedJobDataTable() {
 
     const handleDelete = async  (id) => {
         const res =  await delete_book_mark_job(id);
-        if(res.success) {
+        if(res.code==200) {
            return setFilteredData(filteredData.filter(item => item?._id !== id))
         }
         else{

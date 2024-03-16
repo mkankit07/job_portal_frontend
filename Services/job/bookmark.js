@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 export const book_mark_job = async (formData) => {
 
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/bookmark`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/bookmark`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export const book_mark_job = async (formData) => {
 
 export const get_book_mark_job = async (id) => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/bookmark?id=${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/bookmark`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${Cookies.get('token')}`
@@ -43,13 +43,12 @@ export const get_book_mark_job = async (id) => {
 
 export const delete_book_mark_job = async (id) => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/bookmark`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/bookmark/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${Cookies.get('token')}`,
                 'Content-Type': 'application/json',
             },
-            body : JSON.stringify(id),
         })
         const data = res.json();
         return data;

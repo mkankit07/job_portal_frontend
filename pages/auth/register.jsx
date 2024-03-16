@@ -40,7 +40,7 @@ export default function  Register (){
       toast.success(data.message);
       setTimeout(() => {
         router.push('/auth/login');
-      }, 2000);
+      }, 300);
     }
     else {
       toast.error(data.message);

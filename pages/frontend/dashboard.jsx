@@ -31,26 +31,23 @@ export default function Dashboard() {
       router.push('/auth/login')
     }
   }, [activeUser, id, Cookies])
-
-  
-
-
   useEffect(() => {
     fetchAppliedJobs()
   }, [])
 
 
   const fetchAppliedJobs = async () => {
-
-    const res = await get_my_applied_job()
-    // const get_bookmarks =   await get_book_mark_job()
-    if (res.code==200) {
-      dispatch(setAppliedJob(res?.data))
-      // dispatch(setBookMark(get_bookmarks?.data))
-      setLoading(false)
-    }
-    else {
-      router.push('/auth/login')
+    if(id){
+      const res = await get_my_applied_job()
+      // const get_bookmarks =   await get_book_mark_job()
+      if (res.code==200) {
+        dispatch(setAppliedJob(res?.data))
+        // dispatch(setBookMark(get_bookmarks?.data))
+        setLoading(false)
+      }
+      else {
+        router.push('/auth/login')
+      }
     }
   }
 

@@ -18,9 +18,6 @@ export default function PostedJobs() {
     const user = useSelector(state => state?.User?.userData)
     const myJobs = useSelector(state => state?.Job?.myJobs)||[]
     const id = user?.id
-
-
-
     useEffect(() => {
         if (!id || !Cookies.get('token')) {
             toast.error("Please Login First")

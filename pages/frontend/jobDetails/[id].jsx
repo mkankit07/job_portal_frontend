@@ -63,9 +63,9 @@ export default function JobDetails() {
 
         if (!user) return toast.error('Please Login First');
 
-        const data = {user : user?.id , job : JobDetails?._id}
+        const data = {job_id : JobDetails?._id}
         const res = await book_mark_job(data);
-        if(res.success) {
+        if(res.code==200 || res.code==201) {
            return toast.success(res.message)
         }
         else {

@@ -11,9 +11,6 @@ export default function Intro() {
   const [filterJobs, setFilteredJobs] = useState([])
   const [doneSearch , setDoneSearch] = useState(false)
 
-
-
-
   const handleSearch = (e) => {
     e.preventDefault();
     if(jobData.length>0){
