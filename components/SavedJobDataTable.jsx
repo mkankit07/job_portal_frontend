@@ -10,7 +10,7 @@ import { toast , ToastContainer } from 'react-toastify';
 export default function SavedJobDataTable() {
     const router = useRouter();
     const bookMarkJobData = useSelector(state => state.AppliedJob.bookMark)
-    console.log(bookMarkJobData)
+    // console.log(bookMarkJobData)
     const [Data, setData] = useState([]);
 
     
@@ -44,7 +44,7 @@ export default function SavedJobDataTable() {
         },
         {
             name: 'Job Salary ',
-            selector: row => '$' + row?.job_id?.salary,
+            selector: row => '₹' + row?.job_id?.salary,
         },
         {
             name: 'Action',

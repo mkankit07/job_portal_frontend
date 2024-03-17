@@ -16,7 +16,7 @@ export default function PostAJob() {
     const [error, setError] = useState({title: "", salary: "", email: "", company: "", description: "", job_category: "", job_type: "", job_experience: "", job_vacancy: "", job_deadline: "" });
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(e)
+        // console.log(e)
         if (!formData.title) {
             setError({ ...error, title: "title Field is required" })
             return;

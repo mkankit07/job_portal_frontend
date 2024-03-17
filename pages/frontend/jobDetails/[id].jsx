@@ -133,7 +133,7 @@ export default function JobDetails() {
                                         <div className='flex items-center justify-center mb-1'>
                                             <AiOutlineDollarCircle className='text-xs font-semibold text-indigo-600' />
                                             <p className='font-semibold text-base mx-1'>Salary </p>
-                                            <p className=' text-sm text-gray-800 mx-1'>$ {JobDetails?.salary} </p>
+                                            <p className=' text-sm text-gray-800 mx-1'>₹ {JobDetails?.salary} </p>
                                         </div>
                                     </div>
                                     <div className='flex items-center justify-center'>

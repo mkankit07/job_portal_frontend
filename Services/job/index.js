@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 // post job api
 
 export const post_job = async (formData) => {
-    console.log(formData)
+    // console.log(formData)
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/job`, {
             method: 'POST',

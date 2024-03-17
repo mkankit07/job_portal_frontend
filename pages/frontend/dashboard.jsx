@@ -39,10 +39,10 @@ export default function Dashboard() {
   const fetchAppliedJobs = async () => {
     if(id){
       const res = await get_my_applied_job()
-      // const get_bookmarks =   await get_book_mark_job()
+      const get_bookmarks =   await get_book_mark_job()
       if (res.code==200) {
         dispatch(setAppliedJob(res?.data))
-        // dispatch(setBookMark(get_bookmarks?.data))
+        dispatch(setBookMark(get_bookmarks?.data))
         setLoading(false)
       }
       else {

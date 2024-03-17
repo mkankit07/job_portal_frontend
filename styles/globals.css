@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.bg-indigo-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(125 122 187 / var(--tw-bg-opacity)) !important;
+}
+.text-indigo-600 {
+    --tw-text-opacity: 1;
+    color: rgb(125 122 187 / var(--tw-text-opacity));
+}

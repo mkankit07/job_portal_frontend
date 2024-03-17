@@ -5,7 +5,6 @@ import { AiOutlineArrowRight } from 'react-icons/ai'
 import { useRouter } from 'next/router'
 
 export default function JobsCard({job , posted}) {
-    console.log(job ,posted,">>>>>>>>>>>>>>>>>>>>")
     const router = useRouter();
     return (
         <div key={job._id} className='w-full cursor-pointer   transition-all duration-1000  md:w-5/12 m-4 border hover:shadow-xl rounded px-4 md:flex md:flex-wrap'>
@@ -20,7 +19,7 @@ export default function JobsCard({job , posted}) {
                 <div className='flex  px-2 py-2  items-center justify-center '>
                     <BsDot className='text-4xl m-0 font-extrabold text-indigo-600' />
                     <h1 className='text-lg text-gray-900'>Salary : &nbsp;</h1>
-                    <p className='text-base  font-semibold'>{job?.salary}$ / month</p>
+                    <p className='text-base  font-semibold'>{job?.salary} ₹ / month</p>
                 </div>
                 <div className='flex px-2 py-2 items-center  justify-center'>
                     <BsDot className='text-4xl font-extrabold text-indigo-600' />

@@ -12,7 +12,7 @@ export default function ApplyJob() {
   const dispatch = useDispatch();
   const { id } = router.query;
   const activeUser = useSelector((state) => state.User.userData);
-  console.log(activeUser);
+  // console.log(activeUser);
   const [formikData, setFormikData] = useState({
     name: "",
     email: activeUser?.email,
@@ -33,7 +33,7 @@ export default function ApplyJob() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formikData);
+    // console.log(formikData);
     if (!name) {
       setError({ ...error, name: "Name Field is required" });
       return;
@@ -76,7 +76,7 @@ export default function ApplyJob() {
       toast.success("Your Application is Submitted , Redirecting ... ");
       router.push("/");
     } else {
-      console.log(res?.message);
+      // console.log(res?.message);
       toast.error(res?.message);
     }
   };
